@@ -162,6 +162,18 @@ function revealScale(targets) {
     })
 }
 
+function animateRacoon() {
+    gsap.to('.pros__racoon', {
+        scale: .8,
+        duration: 3,
+        scrollTrigger: {
+            trigger: '.pros__racoon',
+            scrub: 2,
+            start: 'top 60%'
+        }
+    })
+}
+
 const blocksFromBottom = document.querySelectorAll('.reveal-block-bt');
 const revealFromLeftEls = document.querySelectorAll('.reveal-from-left');
 const revealFromRightEls = document.querySelectorAll('.reveal-from-right');
@@ -173,6 +185,7 @@ revealFromLeft(revealFromLeftEls);
 revealFromSide(revealFromRightEls, 'right');
 revealFromBot(revealFromBotEls);
 revealScale(revealScaleEls);
+animateRacoon();
 
 
 // Swiper

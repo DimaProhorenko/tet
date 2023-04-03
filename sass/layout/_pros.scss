@@ -3,7 +3,8 @@
 .pros {
     text-align: center;
     position: relative;
-    padding-block-start: 8em;
+    padding-block: 8em;
+    overflow: hidden;
 
     &__slider {
         padding-block-start: 5em;
@@ -72,6 +73,25 @@
 
         @include abs.for-tablet-up {
             top: 4rem;
+        }
+    }
+
+    &__racoon {
+        max-width: abs.toRem(100);
+        @include abs.absolute(bottom 0 left 15%);
+        transform-origin: bottom center;
+
+        @include abs.for-desktop-up {
+            max-width: abs.toRem(160);
+        }
+    }
+
+    &__leaves {
+        
+        @include abs.for-desktop-up {
+            width: 120%;
+            height: 150px;
+            bottom: -60px;
         }
     }
 }
