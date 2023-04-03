@@ -1,0 +1,32 @@
+@use '../abstracts/' as abs;
+
+.about {
+    position: relative;
+
+    &__wrapper {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__img {
+        max-width: abs.toRem(280);
+        margin-inline: auto;
+
+        @include abs.for-desktop-up {
+            max-width: abs.toRem(400);
+        }
+    }
+
+    &__plant {
+        width: 30%;
+        max-width: abs.toRem(200);
+
+        &--left {
+            @include abs.absolute(top 15% left 0)
+        }
+
+        &--right {
+            @include abs.absolute(top 30% right 0);
+        }
+    }
+}

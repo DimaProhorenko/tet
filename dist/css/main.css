@@ -126,6 +126,11 @@ select {
 .section {
   padding-block: 2em;
 }
+@media screen and (min-width: 62.5rem) {
+  .section {
+    padding-block: 4em;
+  }
+}
 .section__title {
   font-size: 1.75rem;
   font-size: clamp(1.75rem, 1.5rem + 0.92vw, 2.25rem);
@@ -143,15 +148,20 @@ select {
 
 .flex-half {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: column-reverse;
   gap: 2em;
 }
+@media screen and (min-width: 47.9375rem) {
+  .flex-half {
+    flex-direction: row-reverse;
+  }
+}
 .flex-half > * {
-  flex-basis: 100%;
+  width: 100%;
 }
 @media screen and (min-width: 47.9375rem) {
   .flex-half > * {
-    flex-basis: 45%;
+    width: 50%;
   }
 }
 
@@ -161,6 +171,10 @@ select {
 
 .row-reverse-sm {
   flex-direction: row-reverse;
+}
+
+.reveal-block-bt {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
 }
 
 .burger {
@@ -395,4 +409,35 @@ select {
   .hero__leaves {
     bottom: -180px;
   }
+}
+
+.about {
+  position: relative;
+}
+.about__wrapper {
+  position: relative;
+  z-index: 2;
+}
+.about__img {
+  max-width: 17.5rem;
+  margin-inline: auto;
+}
+@media screen and (min-width: 62.5rem) {
+  .about__img {
+    max-width: 25rem;
+  }
+}
+.about__plant {
+  width: 30%;
+  max-width: 12.5rem;
+}
+.about__plant--left {
+  top: 15%;
+  left: 0;
+  position: absolute;
+}
+.about__plant--right {
+  top: 30%;
+  right: 0;
+  position: absolute;
 }

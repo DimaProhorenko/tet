@@ -89,3 +89,58 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 window.onresize = setHeroPadding;
+
+
+// Reveal animations
+
+function revealBlockBottom(targets) {
+    console.log(targets);
+    targets.forEach(target => {
+        gsap.to(target, {
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: 1,
+            scrollTrigger: {
+                trigger: target,
+                start: 'top 40%',
+                markers: true,
+            }
+        })
+    }) 
+}
+
+function revealFromLeft(targets) {
+    targets.forEach(target => {
+        gsap.from(target, {
+            xPercent: '-=15',
+            opacity: 0,
+            scrollTrigger: {
+                trigger: target,
+                start: 'top 50%',
+            }
+        })
+    })
+}
+
+function revealFromSide(targets, side='left') {
+    const xVal = side == 'left' ? '-=15' : '+=15';
+
+    targets.forEach(target => {
+        gsap.from(target, {
+            xPercent: xVal,
+            opacity: 0,
+            scrollTrigger: {
+                trigger: target,
+                start: 'top 50%',
+            }
+        })
+    })
+}
+
+const blocksFromBottom = document.querySelectorAll('.reveal-block-bt');
+const revealFromLeftEls = document.querySelectorAll('.reveal-from-left');
+const revealFromRightEls = document.querySelectorAll('.reveal-from-right');
+
+revealBlockBottom(blocksFromBottom);
+revealFromLeft(revealFromLeftEls);
+revealFromSide(revealFromRightEls, 'right');
+

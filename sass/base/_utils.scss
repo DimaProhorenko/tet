@@ -25,6 +25,10 @@
 .section {
     padding-block: 2em;
 
+    @include abs.for-desktop-up {
+        padding-block: 4em;
+    }
+
     &__title {
         font-size: 1.75rem;
         font-size: clamp(1.75rem, 1.5rem + 0.92vw, 2.25rem);
@@ -47,14 +51,18 @@
 
 .flex-half {
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: column-reverse;
     gap: 2em;
 
+    @include abs.for-tablet-up {
+        flex-direction: row-reverse;
+    }
+
     & > * {
-        flex-basis: 100%;
+        width: 100%;
 
         @include abs.for-tablet-up {
-            flex-basis: 45%;
+            width: 50%;
         }
     }
 }
@@ -67,4 +75,9 @@
 .row-reverse-sm {
     flex-direction: row-reverse;
 
+}
+
+
+.reveal-block-bt {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
 }

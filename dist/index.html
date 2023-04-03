@@ -29,56 +29,55 @@
   </head>
   <body>
     <div class="overflow">
-      <header class="header">
-        <div class="wrapper header__wrapper">
-          <a href="/" class="logo" aria-label="home page">
-            <img
-              src="./assets/img/logo.webp"
-              alt="The elephant's trunk logo"
-              class="logo__img header__logo"
-            />
-          </a>
-          <nav class="header__nav">
-            <ul class="header__list">
-              <li class="header__li">
-                <a href="#" class="header__link">home</a>
-              </li>
-              <li class="header__li">
-                <a href="#" class="header__link">About us</a>
-              </li>
-              <li class="header__li">
-                <a href="#" class="header__link">Browse books</a>
-              </li>
-              <li class="header__li">
-                <a href="#" class="header__link">Blog</a>
-              </li>
-              <li class="header__li">
-                <a href="#" class="header__link">Contact us</a>
-              </li>
-            </ul>
-          </nav>
-          <nav class="header__side">
-            <ul class="header__side-list">
-              <li>
-                <a href="#"><i class="fa-solid fa-circle-user"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa-solid fa-basket-shopping"></i></a>
-              </li>
-              <li>
-                <button class="burger">
-                  <span class="burger__line burger__line--top"></span
-                  ><span class="burger__line burger__line--mid"></span
-                  ><span class="burger__line burger__line--bot"></span>
-                </button>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-
       <div class="scroll-wrapper">
         <main class="scroll-content">
+          <header class="header">
+            <div class="wrapper header__wrapper">
+              <a href="/" class="logo" aria-label="home page">
+                <img
+                  src="./assets/img/logo.webp"
+                  alt="The elephant's trunk logo"
+                  class="logo__img header__logo"
+                />
+              </a>
+              <nav class="header__nav">
+                <ul class="header__list">
+                  <li class="header__li">
+                    <a href="#" class="header__link">home</a>
+                  </li>
+                  <li class="header__li">
+                    <a href="#" class="header__link">About us</a>
+                  </li>
+                  <li class="header__li">
+                    <a href="#" class="header__link">Browse books</a>
+                  </li>
+                  <li class="header__li">
+                    <a href="#" class="header__link">Blog</a>
+                  </li>
+                  <li class="header__li">
+                    <a href="#" class="header__link">Contact us</a>
+                  </li>
+                </ul>
+              </nav>
+              <nav class="header__side">
+                <ul class="header__side-list">
+                  <li>
+                    <a href="#"><i class="fa-solid fa-circle-user"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-solid fa-basket-shopping"></i></a>
+                  </li>
+                  <li>
+                    <button class="burger">
+                      <span class="burger__line burger__line--top"></span
+                      ><span class="burger__line burger__line--mid"></span
+                      ><span class="burger__line burger__line--bot"></span>
+                    </button>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </header>
           <section class="hero">
             <div class="wrapper hero__wrapper">
               <div class="hero__content">
@@ -109,8 +108,8 @@
 
           <section class="section about bg-green">
             <div class="wrapper">
-              <div class="flex-half row-reverse-sm ai-center about__wrapper">
-                <div class="about__content">
+              <div class="flex-half ai-center about__wrapper">
+                <div class="about__content" data-speed="0.7">
                   <h2 class="section__title">About us</h2>
                   <p class="section__p">
                     The Elephant’s Trunk is a children’s personalised book
@@ -118,7 +117,7 @@
                     books that are inclusive, diverse, educational, and fun.
                   </p>
                 </div>
-                <div class="about__image">
+                <div class="about__image reveal-block-bt">
                   <img
                     src="./assets/img/about/child-visual.webp"
                     alt=""
@@ -127,6 +126,16 @@
                 </div>
               </div>
             </div>
+            <img
+              src="./assets/img/about/plant-left.webp"
+              alt=""
+              class="about__plant about__plant--left reveal-from-left"
+            />
+            <img
+              src="./assets/img/about/plant-right.webp"
+              alt=""
+              class="about__plant about__plant--right reveal-from-right"
+            />
           </section>
           <section style="background-color: #333; height: 100vh"></section>
         </main>
