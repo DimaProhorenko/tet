@@ -71,13 +71,15 @@ mm.add("(max-width: 766px)", () => {
 
 })
 
-const scroller = ScrollSmoother.create({
-    wrapper: '.scroll-wrapper',
-    content: '.scroll-content',
-    smooth: 1,
-    effects: true,
-    normalizeScroll: true,
-})
+if (ScrollTrigger.isTouch !== 1) {
+    const scroller = ScrollSmoother.create({
+        wrapper: '.scroll-wrapper',
+        content: '.scroll-content',
+        smooth: 1,
+        effects: true,
+        normalizeScroll: true,
+    })
+}
 
 
 
