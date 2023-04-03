@@ -1,0 +1,54 @@
+@use './functions' as f;
+
+$primary: #fff;
+$primary-2: #f1f3f5;
+$secondary: #397533;
+$secondary-2: #397533;
+$text-base: #1f1f1f;
+$text-primary: #1f1f1f;
+$text-secondary: #397533;
+$text4: #fff;
+$hover: rgba(0,0,0,.075);
+$hover-1: rgba(0,0,0,.15);
+$hover-2: rgba(0,0,0,.25);
+$cyan: #22b8cf;
+$green: #c1d783;
+$green-light: #daeea4;
+$green-dark: #308d46;
+$red: #da3c3c;
+$yellow: #fcf6bb;
+$orange: #fcb74f;
+$purple: #f81ce5;
+$blue: #c4e2e9;
+$blue-2: #a8d1dc;
+$blue-3: #9cc4ce;
+$pink: #ff0080;
+$pink-light: #ff379c;
+$magenta: #eb367f;
+$violet: #7928ca;
+$violet-dark: #4c2889;
+$accent-0: #fff;
+$accent-1: #f5f5f5;
+$accent-2: #eaeaea;
+$accent-3: #949494;
+$accent-4: #797979;
+$accent-5: #626262;
+$accent-6: #494949;
+$accent-7: #333;
+$accent-8: #1f1f1f;
+$accent-9: #000;
+$selection: $cyan;
+
+
+$ff-regular: 'Poppins';
+$ff-heading: 'Chelsea';
+
+//bp
+$bp-phone: f.toRem(599);
+$bp-tablet: f.toRem(720);
+$bp-desktop: f.toRem(1000);
+$max-width: f.toRem(1000);
+
+// Transitions
+$duration: 300ms;
+$timing: ease-in-out;

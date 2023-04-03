@@ -1,0 +1,83 @@
+@use '../abstracts/' as abs;
+
+.header {
+    padding-block: 1em;
+    position: relative;
+    z-index: 100;
+
+    &__wrapper {
+        @include abs.flex(column-reverse, null, center);
+
+        @include abs.for-tablet-up {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__nav {
+        width: 200%;
+        height: 200vh;
+        @include abs.fixed(top -50% left -50%);
+        // translate: -50%;
+        background-color: rgba(abs.$secondary, .5);
+        backdrop-filter: blur(5px);
+        transform-origin: top left;
+        color: abs.$text4;
+        @include abs.flex-center;
+        text-align: center;
+        border-radius: 50%;
+
+        @include abs.for-tablet-up {
+            all: unset;
+        }
+
+    }
+
+    &__list {
+        @include abs.for-tablet-up {
+            @include abs.flex;
+            gap: 2em;
+        }
+        & > * + * {
+            margin-block-start: 1em;
+
+            @include abs.for-tablet-up {
+                margin: 0;
+            }
+        }
+    }
+
+    &__link {
+        text-transform: uppercase;
+        font-size: 1.3rem; 
+        font-weight: 600;
+        
+    }
+
+    &__side {
+        align-self: flex-end;
+        margin-block-end: 4em;
+        position: relative;
+        z-index: 2;
+
+        @include abs.for-tablet-up {
+            margin: 0;
+            align-self: initial;
+        }
+
+        ul {
+            @include abs.flex;
+            column-gap: 1em;
+        }
+
+        a {
+            display: inline-block;
+            padding: .15em;
+            font-size: 1.3rem;
+
+            @include abs.for-tablet-up {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+@use '../abstracts/' as abs;
+
+.wrapper {
+    width: 90%;
+    max-width: abs.$max-width;
+    margin-inline: auto;
+}

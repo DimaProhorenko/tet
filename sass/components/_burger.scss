@@ -1,0 +1,19 @@
+@use '../abstracts/' as abs;
+
+.burger {
+    width: abs.toRem(25);
+    height: abs.toRem(25);
+    @include abs.flex-center(column);
+    gap: 3px;
+
+    @include abs.for-tablet-up {
+        display: none;
+    }
+
+    &__line {
+        width: 80%;
+        height: 3px;
+        background-color: abs.$text-primary;
+        pointer-events: none;
+    }
+}
