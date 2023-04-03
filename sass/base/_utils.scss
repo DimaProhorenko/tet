@@ -20,3 +20,51 @@
     font-family: abs.$ff-heading;
     margin-block-end: 1em;
 }
+
+
+.section {
+    padding-block: 2em;
+
+    &__title {
+        font-size: 1.75rem;
+        font-size: clamp(1.75rem, 1.5rem + 0.92vw, 2.25rem);
+        margin-block-end: 1em;
+        color: abs.$secondary;
+    }
+}
+
+
+.bg {
+    &-green {
+        background-color: abs.$green;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+
+.flex-half {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2em;
+
+    & > * {
+        flex-basis: 100%;
+
+        @include abs.for-tablet-up {
+            flex-basis: 45%;
+        }
+    }
+}
+
+.ai-center {
+    align-items: center;
+}
+
+
+.row-reverse-sm {
+    flex-direction: row-reverse;
+
+}

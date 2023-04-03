@@ -123,6 +123,46 @@ select {
   margin-block-end: 1em;
 }
 
+.section {
+  padding-block: 2em;
+}
+.section__title {
+  font-size: 1.75rem;
+  font-size: clamp(1.75rem, 1.5rem + 0.92vw, 2.25rem);
+  margin-block-end: 1em;
+  color: #397533;
+}
+
+.bg-green {
+  background-color: #c1d783;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-half {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2em;
+}
+.flex-half > * {
+  flex-basis: 100%;
+}
+@media screen and (min-width: 47.9375rem) {
+  .flex-half > * {
+    flex-basis: 45%;
+  }
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.row-reverse-sm {
+  flex-direction: row-reverse;
+}
+
 .burger {
   width: 1.5625rem;
   height: 1.5625rem;
