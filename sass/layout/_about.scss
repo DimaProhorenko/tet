@@ -2,10 +2,21 @@
 
 .about {
     position: relative;
+    text-align: center;
+
+    @include abs.for-tablet-up {
+        text-align: left;
+    }
 
     &__wrapper {
         position: relative;
         z-index: 2;
+    }
+
+    &__title {
+        @include abs.for-tablet-up {
+            text-align: left;
+        }
     }
 
     &__img {

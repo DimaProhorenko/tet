@@ -52,7 +52,7 @@ function addMediaQueryWatcher(query, layoutChangeCallback) {
 const mm = gsap.matchMedia();
 let menuOpen = false;
 
-mm.add("(max-width: 766px)", () => {
+mm.add("(max-width: 767px)", () => {
     const burgerTl = animateBurger();
     const navTl = animateNav();
 
@@ -135,11 +135,58 @@ function revealFromSide(targets, side='left') {
     })
 }
 
+function revealFromBot(targets) {
+    targets.forEach(target => {
+        gsap.from(target, {
+            yPercent: '+= 15',
+            opacity: 0,
+            scrollTrigger: {
+                trigger: target,
+                start: 'top 60%',
+            }
+        })
+    })
+}
+
+function revealScale(targets) {
+    targets.forEach(target => {
+        gsap.from(target, {
+            scale: .6,
+            ease: Elastic.easeOut,
+            duration: 1,
+            scrollTrigger: {
+                trigger: target,
+                start: 'top 60%',
+            }
+        })
+    })
+}
+
 const blocksFromBottom = document.querySelectorAll('.reveal-block-bt');
 const revealFromLeftEls = document.querySelectorAll('.reveal-from-left');
 const revealFromRightEls = document.querySelectorAll('.reveal-from-right');
+const revealFromBotEls = document.querySelectorAll('.reveal-from-bot')
+const revealScaleEls = document.querySelectorAll('.reveal-scale');
 
 revealBlockBottom(blocksFromBottom);
 revealFromLeft(revealFromLeftEls);
 revealFromSide(revealFromRightEls, 'right');
+revealFromBot(revealFromBotEls);
+revealScale(revealScaleEls);
 
+
+// Swiper
+
+const prosSwiper = new Swiper('.pros__slider', {
+    slidesPerView: 1,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    breakpoints: {
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 30
+        }
+    }
+})
