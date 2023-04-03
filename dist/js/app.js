@@ -102,7 +102,6 @@ function revealBlockBottom(targets) {
             scrollTrigger: {
                 trigger: target,
                 start: 'top 40%',
-                markers: true,
             }
         })
     }) 

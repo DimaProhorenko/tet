@@ -39,4 +39,11 @@
             bottom: -180px;
         }
     }
+
+    &__bt-grass {
+        @include abs.absolute(bottom -2px left 0);
+        display: block;
+        max-width: 100%;
+        color: abs.$green;
+    }
 }

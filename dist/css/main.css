@@ -410,6 +410,14 @@ select {
     bottom: -180px;
   }
 }
+.hero__bt-grass {
+  bottom: -2px;
+  left: 0;
+  position: absolute;
+  display: block;
+  max-width: 100%;
+  color: #c1d783;
+}
 
 .about {
   position: relative;
