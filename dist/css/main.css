@@ -27,9 +27,9 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
-html, body {
+.overflow {
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* Set core body defaults */
@@ -108,6 +108,21 @@ select {
   margin-inline: auto;
 }
 
+.title {
+  font-size: 1.75rem;
+  font-size: clamp(1.75rem, 1.18rem + 3.1vw, 3.5rem);
+  color: #397533;
+  margin-block-end: 0.4em;
+}
+
+.lead {
+  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 0.8rem + 1.5vw, 2rem);
+  font-weight: bold;
+  font-family: "Chelsea";
+  margin-block-end: 1em;
+}
+
 .burger {
   width: 1.5625rem;
   height: 1.5625rem;
@@ -117,7 +132,7 @@ select {
   align-items: center;
   gap: 3px;
 }
-@media screen and (min-width: 45rem) {
+@media screen and (min-width: 47.9375rem) {
   .burger {
     display: none;
   }
@@ -129,17 +144,81 @@ select {
   pointer-events: none;
 }
 
+.logo {
+  width: 9.375rem;
+}
+@media screen and (min-width: 47.9375rem) {
+  .logo {
+    width: 3.75rem;
+  }
+}
+@media screen and (min-width: 62.5rem) {
+  .logo {
+    width: 6.25rem;
+  }
+}
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1em 1.5em;
+  border-radius: 8px;
+}
+
+.btn--orange {
+  background-color: #fcb74f;
+}
+
+.bug {
+  position: relative;
+  width: fit-content;
+}
+.bug__img {
+  width: 30%;
+  max-width: 3.125rem;
+  top: -60%;
+  right: 5%;
+  position: absolute;
+}
+
 .header {
   padding-block: 1em;
-  position: relative;
+  width: 100%;
+  position: fixed;
+  backdrop-filter: blur(10px);
+  top: 0;
+  left: 0;
   z-index: 100;
+}
+.header a:not(.logo) {
+  display: inline-block;
+}
+.header a:not(.logo):hover::after {
+  scale: 1;
+}
+.header a:not(.logo)::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #397533;
+  display: block;
+  scale: 0 1;
+  transform-origin: top left;
+  transition: scale 300ms ease-in-out;
 }
 .header__wrapper {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
 }
-@media screen and (min-width: 45rem) {
+@media screen and (min-width: 47.9375rem) {
   .header__wrapper {
     flex-direction: row;
     justify-content: space-between;
@@ -161,39 +240,54 @@ select {
   text-align: center;
   border-radius: 50%;
 }
-@media screen and (min-width: 45rem) {
+@media screen and (min-width: 47.9375rem) {
   .header__nav {
     all: unset;
   }
 }
-@media screen and (min-width: 45rem) {
+@media screen and (min-width: 47.9375rem) {
   .header__list {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1em;
+  }
+}
+@media screen and (min-width: 62.5rem) {
+  .header__list {
     gap: 2em;
   }
 }
 .header__list > * + * {
   margin-block-start: 1em;
 }
-@media screen and (min-width: 45rem) {
+@media screen and (min-width: 47.9375rem) {
   .header__list > * + * {
     margin: 0;
   }
 }
 .header__link {
   text-transform: uppercase;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   font-weight: 600;
+}
+@media screen and (min-width: 47.9375rem) {
+  .header__link {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 62.5rem) {
+  .header__link {
+    font-size: 1.4rem;
+  }
 }
 .header__side {
   align-self: flex-end;
-  margin-block-end: 4em;
+  margin-block-end: 2em;
   position: relative;
   z-index: 2;
 }
-@media screen and (min-width: 45rem) {
+@media screen and (min-width: 47.9375rem) {
   .header__side {
     margin: 0;
     align-self: initial;
@@ -210,8 +304,48 @@ select {
   padding: 0.15em;
   font-size: 1.3rem;
 }
-@media screen and (min-width: 45rem) {
+@media screen and (min-width: 47.9375rem) {
   .header__side a {
     font-size: 1.5rem;
   }
+}
+
+.hero {
+  min-height: 100vh;
+  padding-block-start: 12em;
+  text-align: center;
+  position: relative;
+}
+@media screen and (min-width: 62.5rem) {
+  .hero {
+    min-height: 140vh;
+  }
+}
+.hero__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero__cta {
+  margin-block-start: 3em;
+  margin-inline: auto;
+}
+.hero__bg {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  translate: -50% -50%;
+  display: block;
+  width: auto;
+  max-width: initial;
+  height: 100%;
+  z-index: -1;
+  filter: brightness(0.85);
+}
+.hero__leaves {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  display: block;
+  z-index: -1;
 }

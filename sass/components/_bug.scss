@@ -1,0 +1,12 @@
+@use '../abstracts/' as abs;
+
+.bug {
+    position: relative;
+    width: fit-content;
+
+    &__img {
+        width: 30%;
+        max-width: abs.toRem(50);
+        @include abs.absolute(top -60% right 5%);
+    }
+}

@@ -5,3 +5,18 @@
     max-width: abs.$max-width;
     margin-inline: auto;
 }
+
+.title {
+    font-size: 1.75rem;
+    font-size: clamp(1.75rem, 1.18rem + 3.1vw, 3.5rem);
+    color: abs.$secondary;
+    margin-block-end: .4em;
+}
+
+.lead {
+    font-size: 1.125rem;
+    font-size: clamp(1.125rem, 0.8rem + 1.5vw, 2rem);
+    font-weight: bold;
+    font-family: abs.$ff-heading;
+    margin-block-end: 1em;
+}

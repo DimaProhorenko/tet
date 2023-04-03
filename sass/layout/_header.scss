@@ -2,8 +2,32 @@
 
 .header {
     padding-block: 1em;
-    position: relative;
+    width: 100%;
+    position: fixed;
+    backdrop-filter: blur(10px);
+    top: 0;
+    left: 0;
     z-index: 100;
+    
+    a:not(.logo){
+        display: inline-block;
+
+        &:hover::after {
+            scale: 1;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: abs.$secondary-2;
+            display: block;
+            scale: 0 1;
+            transform-origin: top left;
+            @include abs.transition(scale);
+        }
+    }
 
     &__wrapper {
         @include abs.flex(column-reverse, null, center);
@@ -36,6 +60,9 @@
     &__list {
         @include abs.for-tablet-up {
             @include abs.flex;
+            gap: 1em;
+        }
+        @include abs.for-desktop-up {
             gap: 2em;
         }
         & > * + * {
@@ -49,14 +76,21 @@
 
     &__link {
         text-transform: uppercase;
-        font-size: 1.3rem; 
+        font-size: 1.8rem; 
         font-weight: 600;
+        @include abs.for-tablet-up {
+            font-size: 1rem;
+        }
+
+        @include abs.for-desktop-up {
+            font-size: 1.4rem;
+        }
         
     }
 
     &__side {
         align-self: flex-end;
-        margin-block-end: 4em;
+        margin-block-end: 2em;
         position: relative;
         z-index: 2;
 

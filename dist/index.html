@@ -28,53 +28,87 @@
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="wrapper header__wrapper">
-        <a href="/" class="logo" aria-label="home page">
-          <img
-            src="./assets/img/logo.webp"
-            alt="The elephant's trunk logo"
-            class="logo__img header__logo"
-          />
-        </a>
-        <nav class="header__nav">
-          <ul class="header__list">
-            <li class="header__li">
-              <a href="#" class="header__link">home</a>
-            </li>
-            <li class="header__li">
-              <a href="#" class="header__link">About us</a>
-            </li>
-            <li class="header__li">
-              <a href="#" class="header__link">Browse books</a>
-            </li>
-            <li class="header__li">
-              <a href="#" class="header__link">Blog</a>
-            </li>
-            <li class="header__li">
-              <a href="#" class="header__link">Contact us</a>
-            </li>
-          </ul>
-        </nav>
-        <nav class="header__side">
-          <ul class="header__side-list">
-            <li>
-              <a href="#"><i class="fa-solid fa-circle-user"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-solid fa-basket-shopping"></i></a>
-            </li>
-            <li>
-              <button class="burger">
-                <span class="burger__line burger__line--top"></span
-                ><span class="burger__line burger__line--mid"></span
-                ><span class="burger__line burger__line--bot"></span>
-              </button>
-            </li>
-          </ul>
-        </nav>
+    <div class="overflow">
+      <header class="header">
+        <div class="wrapper header__wrapper">
+          <a href="/" class="logo" aria-label="home page">
+            <img
+              src="./assets/img/logo.webp"
+              alt="The elephant's trunk logo"
+              class="logo__img header__logo"
+            />
+          </a>
+          <nav class="header__nav">
+            <ul class="header__list">
+              <li class="header__li">
+                <a href="#" class="header__link">home</a>
+              </li>
+              <li class="header__li">
+                <a href="#" class="header__link">About us</a>
+              </li>
+              <li class="header__li">
+                <a href="#" class="header__link">Browse books</a>
+              </li>
+              <li class="header__li">
+                <a href="#" class="header__link">Blog</a>
+              </li>
+              <li class="header__li">
+                <a href="#" class="header__link">Contact us</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="header__side">
+            <ul class="header__side-list">
+              <li>
+                <a href="#"><i class="fa-solid fa-circle-user"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-solid fa-basket-shopping"></i></a>
+              </li>
+              <li>
+                <button class="burger">
+                  <span class="burger__line burger__line--top"></span
+                  ><span class="burger__line burger__line--mid"></span
+                  ><span class="burger__line burger__line--bot"></span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <div class="scroll-wrapper">
+        <main class="scroll-content">
+          <section class="hero">
+            <div class="wrapper hero__wrapper">
+              <div class="hero__content">
+                <div class="section__text">
+                  <h1 class="title">Personalised Children's Books:</h1>
+                  <p class="lead">
+                    Celebrating the Differences and Strengths in All Children
+                  </p>
+                </div>
+                <div class="hero__cta bug">
+                  <img src="./assets/img/bug.webp" alt="" class="bug__img" />
+                  <a href="#" class="btn btn--orange">Create your book</a>
+                </div>
+              </div>
+            </div>
+            <img
+              src="./assets/img/hero/hero-section-background.webp"
+              alt=""
+              class="hero__bg"
+            />
+            <img
+              src="./assets/img/hero/leaves1.webp"
+              alt=""
+              class="hero__leaves"
+            />
+          </section>
+        </main>
       </div>
-    </header>
+    </div>
+
     <script src="./libs/gsap/gsap.min.js"></script>
     <script src="./libs/gsap/ScrollTrigger.min.js"></script>
     <script src="./libs/gsap/ScrollSmoother.min.js"></script>

@@ -1,4 +1,13 @@
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+const header = document.querySelector('.header');
+const hero = document.querySelector('.hero');
+
+function setHeroPadding() {
+    const headerHeight = header.offsetHeight;
+    hero.style = `padding-block-start: ${headerHeight + 30}px`;
+}
+
 
 const burgerEl = document.querySelector('.burger');
 const navEl = document.querySelector('.header__nav');
@@ -33,65 +42,17 @@ function animateNav() {
 }
 
 
-
-// const burgerTl = animateBurger();
-// const navTl = animateNav();
-
-
 function addMediaQueryWatcher(query, layoutChangeCallback) {
     const mql = window.matchMedia(query, layoutChangeCallback);
     mql.addEventListener('change', e => layoutChangeCallback(e.matches));
     layoutChangeCallback(mql.matches);
 }
 
-// function burgerClickHandler(...args) {
-//     const btl = args[1];
-//     const ntl = args[2];
-//     console.log(btl);
-//     console.log(ntl);
-//     console.log(args);
-//     btl.resume().reversed(!btl.reversed());
-//     ntl.resume().reversed(!ntl.reversed());
-
-// }
-
-// addMediaQueryWatcher('(max-width: 719px)', (matches) => {
-//     console.log(matches)
-//     let isMobile = matches ? true : false;
-    
-//     if (matches) {
-//         console.log('hey')
-//         const burgerTl = animateBurger();
-//         const navTl = animateNav();
-
-//         const burgerClickHandler = () => {
-//             burgerTl.resume().reversed(!burgerTl.reversed());
-//             navTl.resume().reversed(!navTl.reversed());
-//         }
-
-//         burgerEl.addEventListener('click', burgerClickHandler)
-        
-//         burgerEl.addEventListener('mouseover', () => {
-//             hoverBurger();
-//         })
-
-//         if (!isMobile) {
-//             burgerEl.removeEventListener('click', burgerClickHandler);
-//             navTl.set('')
-//         }
-//     }
-//     else {
-//         // burgerEl.replaceWith(burgerEl.cloneNode(true))
-//         // burgerEl.removeEventListener('click', burgerClickHandler);
-//         // burgerEl.removeEventListener('mouseover');
-//     }
-// })
-
 
 const mm = gsap.matchMedia();
 let menuOpen = false;
 
-mm.add("(max-width: 719px)", () => {
+mm.add("(max-width: 766px)", () => {
     const burgerTl = animateBurger();
     const navTl = animateNav();
 
@@ -105,13 +66,24 @@ mm.add("(max-width: 719px)", () => {
     return () => {
         menuOpen = false;
         burgerEl.removeEventListener('click', menuHandler);
+        navTl.reverse();
     }
 
+})
+
+const scroller = ScrollSmoother.create({
+    wrapper: '.scroll-wrapper',
+    content: '.scroll-content',
+    smooth: 2,
+    effects: true,
+    normalizeScroll: true,
 })
 
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    
+    setHeroPadding();
 })
+
+window.onresize = setHeroPadding;

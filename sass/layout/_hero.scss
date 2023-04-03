@@ -1,0 +1,37 @@
+@use '../abstracts/' as abs;
+
+.hero {
+    min-height: 100vh;
+    padding-block-start: 12em;
+    text-align: center;
+    position: relative;
+
+    @include abs.for-desktop-up {
+        min-height: 140vh;
+    }
+
+    &__wrapper {
+        @include abs.flex-center;
+    }
+
+    &__cta {
+        margin-block-start: 3em;
+        margin-inline: auto;
+    }
+
+    &__bg {
+        @include abs.absolute-center;
+        display: block;
+        width: auto;
+        max-width: initial;
+        height: 100%;
+        z-index: -1;
+        filter: brightness(.85);
+    }
+
+    &__leaves {
+        @include abs.absolute(bottom 0 left 0);
+        display: block;
+        z-index: -1;
+    }
+}

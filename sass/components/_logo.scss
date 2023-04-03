@@ -1,0 +1,15 @@
+@use '../abstracts/' as abs;
+
+.logo {
+    width: abs.toRem(150);
+
+    @include abs.for-tablet-up {
+        width: abs.toRem(60);
+    }
+
+    @include abs.for-desktop-up {
+        width: abs.toRem(100);
+    }
+
+    // @include abs
+}
