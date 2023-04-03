@@ -36,7 +36,7 @@ function hoverBurger() {
 function animateNav() {
     tl = gsap.timeline({paused: true, reversed: true});
     // gsap.set(navEl, {scale: 0, autoAlpha: 0});
-    tl.fromTo(navEl, {scale: 0, autoAlpha: 0}, {scale: 1, autoAlpha: 1})
+    tl.fromTo(navEl, {scale: 0, autoAlpha: 1}, {scale: 1, autoAlpha: 1})
     .from('.header__link', {opacity: 0, y: 15, stagger: 0.1, duration: .2})
     return tl;
 }
@@ -74,7 +74,7 @@ mm.add("(max-width: 766px)", () => {
 const scroller = ScrollSmoother.create({
     wrapper: '.scroll-wrapper',
     content: '.scroll-content',
-    smooth: 2,
+    smooth: 1,
     effects: true,
     normalizeScroll: true,
 })

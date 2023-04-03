@@ -30,8 +30,13 @@
     }
 
     &__leaves {
-        @include abs.absolute(bottom 0 left 0);
-        display: block;
+        @include abs.absolute(bottom -120px left 0);
+        display: block; 
+        min-height: 200px;
         z-index: -1;
+
+        @include abs.for-desktop-up {
+            bottom: -180px;
+        }
     }
 }

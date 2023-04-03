@@ -190,7 +190,7 @@ select {
 .header {
   padding-block: 1em;
   width: 100%;
-  position: fixed;
+  position: absolute;
   backdrop-filter: blur(10px);
   top: 0;
   left: 0;
@@ -226,11 +226,11 @@ select {
 }
 .header__nav {
   width: 200%;
-  height: 200vh;
+  height: 120vh;
   top: -50%;
   left: -50%;
   position: fixed;
-  background-color: rgba(57, 117, 51, 0.5);
+  background-color: white;
   backdrop-filter: blur(5px);
   transform-origin: top left;
   color: #fff;
@@ -238,7 +238,8 @@ select {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-radius: 50%;
+  border-radius: 500px;
+  color: #1f1f1f;
 }
 @media screen and (min-width: 47.9375rem) {
   .header__nav {
@@ -343,9 +344,15 @@ select {
   filter: brightness(0.85);
 }
 .hero__leaves {
-  bottom: 0;
+  bottom: -120px;
   left: 0;
   position: absolute;
   display: block;
+  min-height: 200px;
   z-index: -1;
+}
+@media screen and (min-width: 62.5rem) {
+  .hero__leaves {
+    bottom: -180px;
+  }
 }
