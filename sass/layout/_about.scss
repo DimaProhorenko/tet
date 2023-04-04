@@ -14,8 +14,12 @@
     }
 
     &__title {
+        font-size: 1.5rem;
+        color: abs.$green-dark;
+        margin-block-end: .75em;
         @include abs.for-tablet-up {
             text-align: left;
+            font-size: 2rem;
         }
     }
 

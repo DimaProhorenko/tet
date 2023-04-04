@@ -21,6 +21,20 @@
     margin-block-end: 1em;
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
+
+
+.flow {
+    & > * + * {
+        margin-block-start: 1em;
+    }
+
+    &--2 > * + * {
+        margin-block-start: 2em;
+    }
+}
 
 .section {
     padding-block: 2em;
@@ -32,7 +46,7 @@
     &__title {
         font-size: 1.75rem;
         font-size: clamp(1.75rem, 1.5rem + 0.92vw, 2.25rem);
-        margin-block-end: 1em;
+        margin-block-end: 2em;
         color: abs.$secondary;
         text-align: center;
     }
@@ -46,6 +60,10 @@
         &--light {
             background-color: abs.$green-light;
         }
+    }
+
+    &-yellow {
+        background-color: abs.$yellow;
     }
 }
 

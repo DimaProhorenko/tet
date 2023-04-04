@@ -123,6 +123,17 @@ select {
   margin-block-end: 1em;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
+.flow > * + * {
+  margin-block-start: 1em;
+}
+.flow--2 > * + * {
+  margin-block-start: 2em;
+}
+
 .section {
   padding-block: 2em;
 }
@@ -134,7 +145,7 @@ select {
 .section__title {
   font-size: 1.75rem;
   font-size: clamp(1.75rem, 1.5rem + 0.92vw, 2.25rem);
-  margin-block-end: 1em;
+  margin-block-end: 2em;
   color: #397533;
   text-align: center;
 }
@@ -144,6 +155,9 @@ select {
 }
 .bg-green--light {
   background-color: #daeea4;
+}
+.bg-yellow {
+  background-color: #fcf6bb;
 }
 
 .flex {
@@ -234,11 +248,47 @@ select {
   font-weight: bold;
   text-transform: uppercase;
   padding: 1em 1.5em;
-  border-radius: 8px;
+  border-radius: 1em;
+  transition: filter 300ms ease-in-out;
+}
+.btn:hover {
+  filter: brightness(1.15);
 }
 
 .btn--orange {
   background-color: #fcb74f;
+}
+.btn--green {
+  background-color: #c1d783;
+}
+.btn--dark-green {
+  background-color: #308d46;
+  color: #fff;
+}
+.btn--icon {
+  display: flex;
+  align-items: center;
+}
+.btn--icon img {
+  display: inline-block;
+  width: 2em;
+  max-width: 3.125rem;
+  margin-inline-end: 1em;
+}
+.btn--bug {
+  position: relative;
+}
+.btn--bug::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  display: block;
+  background-image: url("../assets/img/icons/bug.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: -45%;
+  right: 15%;
+  position: absolute;
 }
 
 .bug {
@@ -257,7 +307,6 @@ select {
   padding-block: 1em;
   width: 100%;
   position: absolute;
-  backdrop-filter: blur(10px);
   top: 0;
   left: 0;
   z-index: 100;
@@ -444,9 +493,15 @@ select {
   position: relative;
   z-index: 2;
 }
+.about__title {
+  font-size: 1.5rem;
+  color: #308d46;
+  margin-block-end: 0.75em;
+}
 @media screen and (min-width: 48rem) {
   .about__title {
     text-align: left;
+    font-size: 2rem;
   }
 }
 .about__img {
@@ -563,4 +618,47 @@ select {
     height: 150px;
     bottom: -60px;
   }
+}
+
+.books__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+@media screen and (min-width: 48rem) {
+  .books__item {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+.books__img {
+  max-width: 18.75rem;
+}
+.books__title {
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 0.8rem + 1.8vw, 2rem);
+  color: #308d46;
+}
+.books__left, .books__right {
+  width: 100%;
+}
+.books__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 48rem) {
+  .books__left {
+    width: 45%;
+  }
+}
+.books__cta {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.books__price {
+  font-size: 1.6rem;
+  font-weight: 500;
 }

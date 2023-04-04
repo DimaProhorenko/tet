@@ -10,7 +10,12 @@
     font-weight: bold;
     text-transform: uppercase;
     padding: 1em 1.5em;
-    border-radius: 8px;
+    border-radius: 1em;
+    @include abs.transition(filter);
+
+    &:hover {
+        filter: brightness(1.15);
+    }
 }
 
 .btn {
@@ -18,5 +23,41 @@
 
     &--orange {
         background-color: abs.$orange;
+    }
+
+    &--green {
+        background-color: abs.$green;
+    }
+
+    &--dark-green {
+        background-color: abs.$green-dark;
+        color: abs.$primary;
+    }
+
+    &--icon {
+        display: flex;
+        align-items: center;
+        
+        img {
+            display: inline-block;
+            width: 2em;
+            max-width: abs.toRem(50);
+            margin-inline-end: 1em;
+        }
+    }
+
+    &--bug {
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 40px;
+            height: 40px;
+            display: block;
+            background-image: url('../assets/img/icons/bug.webp');
+            background-size: contain;
+            background-repeat: no-repeat;
+            @include abs.absolute(top -45% right 15%);
+        }
     }
 }

@@ -152,6 +152,7 @@ function revealScale(targets) {
     targets.forEach(target => {
         gsap.from(target, {
             scale: .6,
+            opacity: 0,
             ease: Elastic.easeOut,
             duration: 1,
             scrollTrigger: {
@@ -161,6 +162,20 @@ function revealScale(targets) {
         })
     })
 }
+
+// function revealFrom(targets) {
+//     console.log(targets);
+//     targets.forEach(target => {
+//         gsap.set(target, {scaleY: 0, transformOrigin: 'bottom left'});
+//         gsap.to(target, {
+//             scaleY: 1,
+//             scrollTrigger: {
+//                 trigger: target,
+//                 start: 'top 60%'
+//             }
+//         })
+//     })
+// }
 
 function animateRacoon() {
     gsap.to('.pros__racoon', {
@@ -179,6 +194,7 @@ const revealFromLeftEls = document.querySelectorAll('.reveal-from-left');
 const revealFromRightEls = document.querySelectorAll('.reveal-from-right');
 const revealFromBotEls = document.querySelectorAll('.reveal-from-bot')
 const revealScaleEls = document.querySelectorAll('.reveal-scale');
+const revealTextEls = document.querySelectorAll('.text-reveal');
 
 revealBlockBottom(blocksFromBottom);
 revealFromLeft(revealFromLeftEls);
