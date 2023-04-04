@@ -37,10 +37,17 @@
 }
 
 .section {
-    padding-block: 2em;
+    padding-block: 4em;
 
     @include abs.for-desktop-up {
-        padding-block: 4em;
+        padding-block: 8em;
+    }
+
+    &--shape-padding {
+
+        @include abs.for-desktop-up {
+            padding-block-start:calc(10em + abs.$bg-shape-height / 2) 
+        }
     }
 
     &__title {
@@ -67,6 +74,16 @@
         &--top {
             top: -2px;
         }
+
+        &--shape {
+            position: absolute;
+            width: 100%;
+            height: abs.$bg-shape-height;
+            border-radius: 100%;
+            background-color: inherit;
+            left: 50%;
+            translate: -50% 50%;
+        }
     }
 }
 
@@ -87,6 +104,11 @@
 
 
 .clr {
+
+    &-black {
+        color: abs.$text-primary;
+    }
+
     &-yellow {
         color: abs.$yellow;
     }

@@ -18,6 +18,10 @@ ul, ol {
 /* Set core root defaults */
 html:focus-within {
   scroll-behavior: smooth;
+
+  @include abs.for-tablet-up {
+    scroll-behavior: initial;
+  }
 }
 
 // html, body {

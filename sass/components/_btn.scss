@@ -13,8 +13,13 @@
     border-radius: 1em;
     @include abs.transition(filter);
 
-    &:hover {
+    &:hover,
+    &:focus {
         filter: brightness(1.15);
+    }
+
+    &:focus {
+        border: 1px solid abs.$selection;
     }
 }
 

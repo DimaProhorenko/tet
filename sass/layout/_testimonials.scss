@@ -1,0 +1,60 @@
+@use '../abstracts/' as abs;
+
+.testimonials {
+    padding-top: 10rem;
+
+    @include abs.for-tablet-up {
+        padding-top: 15rem;
+    }
+
+    &__image {
+        display: none;
+        width: 30%;
+
+        @include abs.for-tablet-up {
+            display: block;
+        }
+    }
+
+    &__content {
+        @include abs.for-tablet-up {
+            width: 60%;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        // align-items: center;
+    }
+
+    &__slider-container {
+        @include abs.for-tablet-up {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+
+            & > * {
+                flex: 1;
+                min-width: 45%;
+            }
+        }
+    }
+
+    &__stars {
+        color: abs.$orange;
+        margin-block: .5em;
+
+        i {
+            display: inline-block;
+
+            &:not(:last-child) {
+                margin-inline-end: .25em;
+            }
+        }
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        font-size: clamp(1.25rem, 0.5rem + 3.07vw, 2.5rem);
+    }
+}

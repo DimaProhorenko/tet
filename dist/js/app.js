@@ -1,5 +1,7 @@
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
+const tabletBreakpoint = 768;
+
 const header = document.querySelector('.header');
 const hero = document.querySelector('.hero');
 
@@ -83,12 +85,6 @@ if (ScrollTrigger.isTouch !== 1) {
 
 
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    setHeroPadding();
-})
-
-window.onresize = setHeroPadding;
 
 
 // Reveal animations
@@ -249,4 +245,70 @@ const charitiesSwiper = new Swiper('.charities__slider', {
             spaceBetween: 30
         }
     }
+})
+
+let testimonialsSwiper;
+
+
+// let testimonialsSwiper = new Swiper('.testimonials__slider', {
+//     slidesPerView: 1,
+//     navigation: {
+//         nextEl: '.swiper-button-next',
+//         prevEl: '.swiper-button-prev',
+//       },
+//     breakpoints: {
+//         768: {
+//             slidesPerView: 3,
+//             spaceBetween: 30
+//         }
+//     }
+// })
+
+const createSlider = selector => {
+    const slider = new Swiper(selector, {
+        slidesPerView: 1,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        breakpoints: {
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            }
+        }
+    })
+
+    return slider;
+}
+
+
+
+const mediaQuery = window.matchMedia(`(min-width: ${tabletBreakpoint}px)`);
+
+mediaQuery.addEventListener('change', () => {
+    resizeWindowHandler();
+})
+
+function resizeWindowHandler() {
+    setHeroPadding();
+    const screenWidth = window.innerWidth;
+    console.log(screenWidth)
+    
+    if (screenWidth >= tabletBreakpoint) {
+        console.log("YES")
+        if (testimonialsSwiper !== undefined) {
+            console.log('destroy');
+            testimonialsSwiper.destroy(true, true)
+        };
+    } else {
+        testimonialsSwiper = createSlider('.testimonials__slider')
+    }
+}
+
+
+// window.onresize = resizeWindowHandler;
+
+document.addEventListener('DOMContentLoaded', () => {
+    resizeWindowHandler();
 })

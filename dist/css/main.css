@@ -26,6 +26,11 @@ ul, ol {
 html:focus-within {
   scroll-behavior: smooth;
 }
+@media screen and (min-width: 48rem) {
+  html:focus-within {
+    scroll-behavior: initial;
+  }
+}
 
 .overflow {
   height: 100%;
@@ -135,11 +140,16 @@ select {
 }
 
 .section {
-  padding-block: 2em;
+  padding-block: 4em;
 }
 @media screen and (min-width: 62.5rem) {
   .section {
-    padding-block: 4em;
+    padding-block: 8em;
+  }
+}
+@media screen and (min-width: 62.5rem) {
+  .section--shape-padding {
+    padding-block-start: calc(10em + 7.5rem / 2);
   }
 }
 .section__title {
@@ -163,6 +173,15 @@ select {
 .section__bg--top {
   top: -2px;
 }
+.section__bg--shape {
+  position: absolute;
+  width: 100%;
+  height: 7.5rem;
+  border-radius: 100%;
+  background-color: inherit;
+  left: 50%;
+  translate: -50% 50%;
+}
 
 .bg-green {
   background-color: #c1d783;
@@ -174,6 +193,9 @@ select {
   background-color: #fcf6bb;
 }
 
+.clr-black {
+  color: #1f1f1f;
+}
 .clr-yellow {
   color: #fcf6bb;
 }
@@ -283,8 +305,11 @@ select {
   border-radius: 1em;
   transition: filter 300ms ease-in-out;
 }
-.btn:hover {
+.btn:hover, .btn:focus {
   filter: brightness(1.15);
+}
+.btn:focus {
+  border: 1px solid #22b8cf;
 }
 
 .btn--orange {
@@ -789,4 +814,64 @@ select {
   .info__croc {
     translate: -20% -80% !important;
   }
+}
+
+.charities__tiger {
+  width: 50%;
+  max-width: 25rem;
+  bottom: 0;
+  left: 50%;
+  position: absolute;
+  translate: -50% calc(50% + 7.5rem / 2);
+  z-index: 1;
+}
+.testimonials {
+  padding-top: 10rem;
+}
+@media screen and (min-width: 48rem) {
+  .testimonials {
+    padding-top: 15rem;
+  }
+}
+.testimonials__image {
+  display: none;
+  width: 30%;
+}
+@media screen and (min-width: 48rem) {
+  .testimonials__image {
+    display: block;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .testimonials__content {
+    width: 60%;
+  }
+}
+.testimonials__wrapper {
+  display: flex;
+}
+@media screen and (min-width: 48rem) {
+  .testimonials__slider-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+  }
+  .testimonials__slider-container > * {
+    flex: 1;
+    min-width: 45%;
+  }
+}
+.testimonials__stars {
+  color: #fcb74f;
+  margin-block: 0.5em;
+}
+.testimonials__stars i {
+  display: inline-block;
+}
+.testimonials__stars i:not(:last-child) {
+  margin-inline-end: 0.25em;
+}
+.testimonials h3 {
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 0.5rem + 3.07vw, 2.5rem);
 }

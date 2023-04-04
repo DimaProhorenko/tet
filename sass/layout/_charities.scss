@@ -1,0 +1,13 @@
+@use '../abstracts/' as abs;
+
+.charities {
+    &__tiger {
+        width: 50%;
+        max-width: abs.toRem(400);
+        @include abs.absolute(bottom 0  left 50%);
+        translate: -50% calc(50% + abs.$bg-shape-height / 2);
+        z-index: 1;
+
+        @include abs.for-tablet-up {}
+    }
+}
