@@ -40,7 +40,7 @@
     &__nav {
         width: 200%;
         height: 120vh;
-        @include abs.fixed(top -50% left -50%);
+        @include abs.absolute(top -50% left -50%);
         // translate: -50%;
         background-color: rgba(abs.$primary, 1);
         backdrop-filter: blur(5px);

@@ -1,7 +1,7 @@
 @use '../abstracts/' as abs;
 
 .books {
-
+    position: relative;
     &__item {
         @include abs.flex-col(null, center);
         gap: 2em;
@@ -36,8 +36,21 @@
     }
 
     &__cta {
-        @include abs.flex(null, null, center);
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
         gap: 1em;
+
+        & > * {
+            flex-shrink: 0;
+        }
+        // @include abs.flex-col(null, flex-start);
+        // gap: 1em;
+
+        // @include abs.for-tablet-up {
+        //     flex-direction: row;
+        //     align-items: center;
+        // }
     }
 
     &__price {

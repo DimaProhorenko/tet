@@ -35,8 +35,8 @@ function hoverBurger() {
 
 function animateNav() {
     tl = gsap.timeline({paused: true, reversed: true});
-    // gsap.set(navEl, {scale: 0, autoAlpha: 0});
-    tl.fromTo(navEl, {scale: 0, autoAlpha: 1}, {scale: 1, autoAlpha: 1})
+    gsap.set(navEl, {scale: 0, autoAlpha: 0});
+    tl.to(navEl, {scale: 1, autoAlpha: 1})
     .from('.header__link', {opacity: 0, y: 15, stagger: 0.1, duration: .2})
     return tl;
 }
@@ -189,12 +189,28 @@ function animateRacoon() {
     })
 }
 
+function animateGrow(targets) {
+    targets.forEach(target => {
+        gsap.set(target, {scale: .7, filter: 'grayScale(1)'});
+        gsap.to(target, {
+            scale: 1,
+            filter: 'grayScale(0)',
+            scrollTrigger: {
+                trigger: target,
+                start: 'top 50%',
+                scrub: 2,
+            }
+        })
+    })
+} 
+
 const blocksFromBottom = document.querySelectorAll('.reveal-block-bt');
 const revealFromLeftEls = document.querySelectorAll('.reveal-from-left');
 const revealFromRightEls = document.querySelectorAll('.reveal-from-right');
 const revealFromBotEls = document.querySelectorAll('.reveal-from-bot')
 const revealScaleEls = document.querySelectorAll('.reveal-scale');
 const revealTextEls = document.querySelectorAll('.text-reveal');
+const animateGrowEls = document.querySelectorAll('.animate-grow');
 
 revealBlockBottom(blocksFromBottom);
 revealFromLeft(revealFromLeftEls);
@@ -202,11 +218,26 @@ revealFromSide(revealFromRightEls, 'right');
 revealFromBot(revealFromBotEls);
 revealScale(revealScaleEls);
 animateRacoon();
+animateGrow(animateGrowEls);
 
 
 // Swiper
 
 const prosSwiper = new Swiper('.pros__slider', {
+    slidesPerView: 1,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    breakpoints: {
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 30
+        }
+    }
+})
+
+const charitiesSwiper = new Swiper('.charities__slider', {
     slidesPerView: 1,
     navigation: {
         nextEl: '.swiper-button-next',

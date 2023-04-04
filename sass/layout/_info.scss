@@ -1,0 +1,38 @@
+@use '../abstracts/' as abs;
+
+.info {
+    text-align: center;
+
+    @include abs.for-tablet-up {
+        text-align: left;
+    }
+
+    &__item {
+        @include abs.flex-col(null, center);
+        gap: 2em;
+
+        @include abs.for-tablet-up {
+            flex-direction: row;
+        }
+    }
+
+    &__img {
+        flex: 1;
+        max-width: abs.toRem(120);
+    }
+
+    &__content {
+        flex: 2;
+    }
+
+    &__croc {
+        width: 70%;
+        max-width: abs.toRem(350);
+        @include abs.absolute(top 0 right 0);
+        translate: 20% -40% !important;
+
+        @include abs.for-desktop-up {
+            translate: -20% -80% !important;
+        }
+    }
+}

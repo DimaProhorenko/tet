@@ -149,6 +149,20 @@ select {
   color: #397533;
   text-align: center;
 }
+.section__bg {
+  display: block;
+  position: absolute;
+  left: 0;
+}
+.section__bg--rotate {
+  rotate: 180deg;
+}
+.section__bg--bottom {
+  bottom: -2px;
+}
+.section__bg--top {
+  top: -2px;
+}
 
 .bg-green {
   background-color: #c1d783;
@@ -158,6 +172,20 @@ select {
 }
 .bg-yellow {
   background-color: #fcf6bb;
+}
+
+.clr-yellow {
+  color: #fcf6bb;
+}
+.clr-green {
+  color: #c1d783;
+}
+.clr-green-light {
+  color: #daeea4;
+}
+
+.relative {
+  position: relative;
 }
 
 .flex {
@@ -189,6 +217,10 @@ select {
 
 .row-reverse-sm {
   flex-direction: row-reverse;
+}
+
+.m-top-4 {
+  margin-block-start: 4em;
 }
 
 .absolute-bg {
@@ -303,6 +335,55 @@ select {
   position: absolute;
 }
 
+.slider {
+  padding-block-start: 5em;
+}
+@media screen and (min-width: 48rem) {
+  .slider {
+    padding-block-start: 0;
+  }
+}
+.slider__image {
+  max-width: 17.5rem;
+  margin-inline: auto;
+  margin-block-end: 2em;
+}
+.slider__img {
+  max-height: 9.375rem;
+  margin-inline: auto;
+}
+.slider__controls {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% 0;
+  display: flex;
+  gap: 1em;
+}
+@media screen and (min-width: 48rem) {
+  .slider__controls {
+    display: none;
+  }
+}
+.slider__control {
+  display: inline-block;
+  all: unset;
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 50%;
+  background-color: #fcb74f;
+  margin-inline: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider__control img {
+  width: 80%;
+}
+.slider__control--prev img {
+  rotate: 180deg;
+}
+
 .header {
   padding-block: 1em;
   width: 100%;
@@ -344,7 +425,7 @@ select {
   height: 120vh;
   top: -50%;
   left: -50%;
-  position: fixed;
+  position: absolute;
   background-color: white;
   backdrop-filter: blur(5px);
   transform-origin: top left;
@@ -620,6 +701,9 @@ select {
   }
 }
 
+.books {
+  position: relative;
+}
 .books__item {
   display: flex;
   flex-direction: column;
@@ -656,9 +740,53 @@ select {
 .books__cta {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1em;
+}
+.books__cta > * {
+  flex-shrink: 0;
 }
 .books__price {
   font-size: 1.6rem;
   font-weight: 500;
+}
+
+.info {
+  text-align: center;
+}
+@media screen and (min-width: 48rem) {
+  .info {
+    text-align: left;
+  }
+}
+.info__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+@media screen and (min-width: 48rem) {
+  .info__item {
+    flex-direction: row;
+  }
+}
+.info__img {
+  flex: 1;
+  max-width: 7.5rem;
+}
+.info__content {
+  flex: 2;
+}
+.info__croc {
+  width: 70%;
+  max-width: 21.875rem;
+  top: 0;
+  right: 0;
+  position: absolute;
+  translate: 20% -40% !important;
+}
+@media screen and (min-width: 62.5rem) {
+  .info__croc {
+    translate: -20% -80% !important;
+  }
 }

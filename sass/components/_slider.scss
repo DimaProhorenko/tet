@@ -1,0 +1,55 @@
+@use '../abstracts/' as abs;
+
+.slider {
+    padding-block-start: 5em;
+
+    @include abs.for-tablet-up {
+        padding-block-start: 0;
+    }
+
+    &__image {
+        max-width: abs.toRem(280);
+        margin-inline: auto;
+        margin-block-end: 2em;
+    }
+
+    &__img {
+        max-height: abs.toRem(150);
+        margin-inline: auto;
+    }
+
+    &__controls {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        translate: -50% 0;
+        display: flex;
+        gap: 1em;
+
+        @include abs.for-tablet-up {
+            display: none;
+        }
+    }
+
+    &__control {
+        display: inline-block;
+        all: unset;
+        width: abs.toRem(50);
+        height: abs.toRem(50);
+        border-radius: 50%;
+        background-color: abs.$orange;
+        margin-inline: .5em;
+        @include abs.flex-center;
+
+
+        img {
+            width: 80%;
+        }
+
+        &--prev {
+            img {
+                rotate: 180deg;
+            }
+        }
+    }
+}
