@@ -61,7 +61,7 @@ h6 {
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }
-a:not([class]) a:hover {
+a:not([class]):hover {
   text-decoration: underline;
 }
 
@@ -154,10 +154,14 @@ select {
 }
 .section__title {
   font-size: 1.75rem;
-  font-size: clamp(1.75rem, 1.5rem + 0.92vw, 2.25rem);
-  margin-block-end: 2em;
+  font-size: clamp(1.75rem, 1.3rem + 2.2vw, 3rem);
+  margin-block-end: 1em;
   color: #397533;
   text-align: center;
+}
+.section__title--s {
+  font-size: 1.2rem;
+  font-size: clamp(1.2rem, 1rem + 1.1vw, 1.8rem);
 }
 .section__bg {
   display: block;
@@ -182,12 +186,19 @@ select {
   left: 50%;
   translate: -50% 50%;
 }
+.section__bg--shape-top {
+  translate: -50% -50%;
+}
 
 .bg-green {
   background-color: #c1d783;
 }
 .bg-green--light {
   background-color: #daeea4;
+}
+.bg-green--dark {
+  background-color: #308d46;
+  color: #fff;
 }
 .bg-yellow {
   background-color: #fcf6bb;
@@ -210,8 +221,17 @@ select {
   position: relative;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .flex {
   display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .flex-half {
@@ -235,6 +255,10 @@ select {
 
 .ai-center {
   align-items: center;
+}
+
+.jc-center {
+  justify-content: center;
 }
 
 .row-reverse-sm {
@@ -874,4 +898,34 @@ select {
 .testimonials h3 {
   font-size: 1.25rem;
   font-size: clamp(1.25rem, 0.5rem + 3.07vw, 2.5rem);
+}
+
+.cta__animal {
+  width: 30%;
+  max-width: 15.625rem;
+  bottom: 0;
+  left: 5%;
+  position: absolute;
+  translate: 0 10%;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.footer__item {
+  flex: 1;
+  min-width: calc(280px - 4em);
+}
+.footer__logo {
+  margin-inline: auto;
+}
+.footer__sm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
 }

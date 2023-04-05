@@ -1,0 +1,11 @@
+@use '../abstracts/' as abs;
+
+.cta {
+
+    &__animal {
+        width: 30%;
+        max-width: abs.toRem(250);
+        @include abs.absolute(bottom 0 left 5%);
+        translate: 0 10%;
+    }
+}

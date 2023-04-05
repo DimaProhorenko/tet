@@ -1,0 +1,25 @@
+@use '../abstracts/' as abs;
+
+.footer {
+
+    &__content {
+        @include abs.flex(null, center, null);
+        gap: 2em;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    &__item {
+        flex: 1;
+        min-width: calc(280px - 4em);
+    }
+
+    &__logo {
+        margin-inline: auto;
+    }
+
+    &__sm {
+        @include abs.flex(null, center);
+        gap: 1em;
+    }
+}

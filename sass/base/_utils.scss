@@ -52,10 +52,15 @@
 
     &__title {
         font-size: 1.75rem;
-        font-size: clamp(1.75rem, 1.5rem + 0.92vw, 2.25rem);
-        margin-block-end: 2em;
+        font-size: clamp(1.75rem, 1.3rem + 2.2vw, 3rem);
+        margin-block-end: 1em;
         color: abs.$secondary;
         text-align: center;
+
+        &--s {
+            font-size: 1.2rem;
+            font-size: clamp(1.2rem, 1rem + 1.1vw, 1.8rem);
+        }
     }
 
     &__bg {
@@ -83,6 +88,10 @@
             background-color: inherit;
             left: 50%;
             translate: -50% 50%;
+
+            &-top {
+                translate: -50% -50%;
+            }
         }
     }
 }
@@ -94,6 +103,11 @@
 
         &--light {
             background-color: abs.$green-light;
+        }
+
+        &--dark {
+            background-color: abs.$green-dark;
+            color: abs.$text4;
         }
     }
 
@@ -125,8 +139,17 @@
     position: relative;
 }
 
+.overflow-hidden {
+    overflow: hidden;
+}
+
 .flex {
     display: flex;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -150,6 +173,10 @@
 
 .ai-center {
     align-items: center;
+}
+
+.jc-center {
+    justify-content: center;
 }
 
 .row-reverse-sm {
